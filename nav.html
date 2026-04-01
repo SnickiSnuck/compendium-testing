@@ -1,0 +1,95 @@
+  <a href="./">Startseite</a>
+  <div class="dropdown">
+    <a class="dropdown-button">Fächer</a>
+    <div class="dropdown-content">
+      <a href="">Französisch</a>
+      <a href="">Mathematik</a>
+      <a href="">Informatik</a>
+    </div>
+  </div>
+  <a href="">Info</a>
+
+<style>
+  nav{
+    position: sticky;
+    top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    box-shadow: var(--border-shadow), var(--shadow);
+    border-radius: 1000px;
+    border: var(--border);
+    padding: .2rem;
+    backdrop-filter: blur(3px);
+    z-index: 100;
+    user-select: none;
+  }
+  
+  nav a{
+    color: black;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 1000px;
+    transition: 50ms;
+    cursor: pointer;
+  }
+
+  nav a:hover{
+    background: var(--bg-hover);
+  }
+
+  .dropdown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dropdown button:hover{
+    background: var(--bg-hover);
+  }
+
+  .dropdown-content{
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    background: var(--bg);
+    padding: .2rem;
+    border-radius: 1.8rem;
+    transform: translateY(6.5rem);
+    z-index: 200;
+    box-shadow: var(--shadow);
+    gap: .2rem;
+  }
+
+  .dropdown-content a{
+    word-break: keep-all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dropdown:hover .dropdown-content{
+    display: flex;
+    animation: slide .8s;
+  }
+
+  @keyframes slide{
+    0%{
+      opacity: 0;
+      scale: 0;
+    }
+    33%{
+      opacity: 1;
+      scale: 1.1;
+    }
+    66%{
+      scale: .98;
+    }
+    100%{
+      scale: 1;
+    }
+  }
+</style>
